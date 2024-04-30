@@ -1,0 +1,70 @@
+Q.1 Write a Program to check whether a number is even or odd using the ternary operator.
+For example,
+Input:
+Enter any number: 12
+
+Output: 
+This number is Even.
+
+ans: #include <stdio.h>
+void main (){
+    int number;
+    printf("type number");
+    scanf("%d",&number);
+    (number%2==0)?printf("this number is even",number):printf("this number is odd",number);
+}
+
+o\p:  /tmp/h8zJ6Aib9J.o
+type number12
+this number is even
+
+=== Code Exited With Errors ===
+
+Q.2 Write a Program to input electricity unit charges and calculate the total electricity bill according to the given condition:
+For the first 50 units Rs. 0.50/unit
+For the next 100 units Rs. 0.75/unit
+For the next 100 units Rs. 1.20/unit
+For units above 250 Rs. 1.50/unit
+An additional surcharge of 20% is added to the bill.
+For example,
+Input:
+Enter electricity units: 435
+
+Output: 
+Electricity Bill = Rs. 597.00
+
+ans: 
+
+
+#include <stdio.h>
+void main() {
+    float units, bill = 0;
+
+    printf("Enter electricity units: ");
+    scanf("%f", &units);
+
+    if (units <= 50) {
+        bill = units * 0.50;
+    } else if (units <= 150) {
+        bill = 50 * 0.50 + (units - 50) * 0.75;
+    } else if (units <= 250) {
+        bill = 50 * 0.50 + 100 * 0.75 + (units - 150) * 1.20;
+    } else {
+        bill = 50 * 0.50 + 100 * 0.75 + 100 * 1.20 + (units - 250) * 1.50;
+    }
+
+    bill*=1.20; 
+    // add 20% surcharge
+
+    printf("Electricity Bill = Rs. %.2f\n", bill);
+
+    
+}
+o\p: 
+
+/tmp/GkRINA5vvb.o
+Enter electricity units: 435
+Electricity Bill = Rs. 597.00
+
+
+=== Code Exited With Errors ===
